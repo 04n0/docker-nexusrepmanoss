@@ -1,8 +1,8 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
 MAINTAINER 04n0
 
-ENV NEXUS_REPO_OSS_VERSION="3.3.0-01" \
+ENV NEXUS_REPO_OSS_VERSION="3.3.1-01" \
     NEXUS_REPO_OSS_DATA="/opt/nexus-data" \
     JVM_HEAP="1G" \
     JVM_HEAP_MAX="1280M" \

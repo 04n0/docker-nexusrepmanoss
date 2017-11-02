@@ -1,4 +1,4 @@
-## Sonatype Nexus Repository Manager OSS 3.4
+## Sonatype Nexus Repository Manager OSS 3.6
 
 Alpine Linux 3.6 based image
 
@@ -11,5 +11,5 @@ Data store persisted into ```./data/``` in current directory with repository man
 
 ```bash
 docker run -d --name nexus-repository-oss --volume $(pwd)/data:/opt/nexus-data \
---publish 8081:8081 --publish 5000:5000 04n0/nexusrepmanoss:3.4-alpine
+--publish 8081:8081 --publish 5000:5000 04n0/nexusrepmanoss:3.6-alpine
 ```

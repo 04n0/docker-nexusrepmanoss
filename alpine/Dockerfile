@@ -30,11 +30,12 @@ RUN \
       -i "/opt/nexus-${NEXUS_REPO_OSS_VERSION}/bin/nexus.vmoptions" &&\
     mkdir -p "${NEXUS_REPO_OSS_DATA}" && \
     chown -R nexus "${NEXUS_REPO_OSS_DATA}" && \
+    ln -s "/opt/nexus-${NEXUS_REPO_OSS_VERSION}" "/opt/nexus-latest" && \
     apk del --no-cache curl libcurl
 
 EXPOSE 8081 5000
 
-WORKDIR "/opt/nexus-${NEXUS_REPO_OSS_VERSION}"
+WORKDIR /opt/nexus-latest
 
 VOLUME ${NEXUS_REPO_OSS_DATA}
 

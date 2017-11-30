@@ -10,7 +10,7 @@ ENV NEXUS_REPO_OSS_VERSION="3.6.2-01" \
 
 RUN \
     set -x && \
-    apk add --no-cache curl su-exec openssl openjdk8-jre-base && \
+    apk add --no-cache curl openssl openjdk8-jre-base && \
     mkdir -p /opt && \
     curl -sL "https://download.sonatype.com/nexus/3/nexus-${NEXUS_REPO_OSS_VERSION}-unix.tar.gz" \
     | tar -zxC "/opt" && \
@@ -35,8 +35,10 @@ RUN \
 
 EXPOSE 8081 5000
 
+USER nexus
+
 WORKDIR /opt/nexus-latest
 
 VOLUME ${NEXUS_REPO_OSS_DATA}
 
-CMD ["su-exec", "nexus", "bin/nexus", "run"]
+CMD ["bin/nexus", "run"]

@@ -1,6 +1,6 @@
 ## Sonatype Nexus Repository Manager OSS 3.6
 
-Alpine Linux 3.6 based image
+Alpine Linux 3.7 based image
 
 *   https://www.sonatype.com/nexus-repository-oss
 *   https://books.sonatype.com/nexus-book/reference3/

@@ -2,7 +2,7 @@ FROM library/alpine:3.7
 
 MAINTAINER 04n0
 
-ENV NEXUS_REPO_OSS_VERSION="3.6.2-01" \
+ENV NEXUS_REPO_OSS_VERSION="3.7.0-04" \
     NEXUS_REPO_OSS_DATA="/opt/nexus-data" \
     JVM_HEAP="1G" \
     JVM_HEAP_MAX="1280M" \

@@ -1,4 +1,4 @@
-FROM library/alpine:3.7
+FROM library/alpine:3.8
 
 MAINTAINER 04n0
 

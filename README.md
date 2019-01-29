@@ -1,4 +1,4 @@
-## Sonatype Nexus Repository OSS 3.15.1
+## Sonatype Nexus Repository OSS 3.15.2
 
 Alpine Linux 3.8 based image
 
@@ -17,7 +17,7 @@ docker run -d -v $(pwd)/data:/opt/nexus-data \
           --ulimit nofile=65536 \
           --name nexus-repository-oss \
           04n0/nexusrepmanoss:3.15-alpine
-```©
+```
 
 If you need to override the default configuration of JVM heap memory size, you
 can do so by passing environment variables `JVM_HEAP_MIN` and/or `JVM_HEAP_MAX`

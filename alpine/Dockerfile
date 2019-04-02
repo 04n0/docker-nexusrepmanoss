@@ -12,7 +12,7 @@ ENV NEXUS_REPO_OSS_VERSION="3.15.2-01" \
 
 RUN \
     set -x && \
-    apk add --no-cache curl openssl openjdk8-jre-base && \
+    apk add --no-cache curl nspr nss openssl openjdk8-jre-base sqlite-libs && \
     mkdir -p /opt && \
     curl -sL "https://download.sonatype.com/nexus/3/nexus-${NEXUS_REPO_OSS_VERSION}-unix.tar.gz" \
     | tar -zxC "/opt" && \

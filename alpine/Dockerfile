@@ -1,6 +1,6 @@
 FROM library/alpine:3.9
 
-MAINTAINER 04n0
+LABEL maintainer="04n0"
 
 ENV NEXUS_REPO_OSS_VERSION="3.16.2-01" \
     NEXUS_REPO_OSS_DATA="/opt/nexus-data" \

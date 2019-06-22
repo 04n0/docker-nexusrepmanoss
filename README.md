@@ -4,7 +4,7 @@ Alpine Linux 3.9 based image
 
 *   https://www.sonatype.com/nexus-repository-oss
 *   https://books.sonatype.com/nexus-book/reference3/
-*   https://help.sonatype.com/display/NXRM3/2018+Release+Notes
+*   https://help.sonatype.com/display/NXRM3/2019+Release+Notes
 
 ## Example usage
 

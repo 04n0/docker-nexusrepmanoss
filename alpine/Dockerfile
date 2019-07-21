@@ -11,8 +11,11 @@ ENV NEXUS_REPO_OSS_VERSION="3.17.0-01" \
     JKS_SECRET="supersecret"
 
 RUN \
+    apk add --no-cache nspr nss openssl openjdk8-jre-base sqlite-libs
+
+RUN \
     set -x && \
-    apk add --no-cache curl nspr nss openssl openjdk8-jre-base sqlite-libs && \
+    apk add --no-cache curl && \
     mkdir -p /opt && \
     curl -sL "https://download.sonatype.com/nexus/3/nexus-${NEXUS_REPO_OSS_VERSION}-unix.tar.gz" \
     | tar -zxC "/opt" && \
@@ -34,7 +37,7 @@ RUN \
     chown -R nexus:nexus "/opt/nexus-${NEXUS_REPO_OSS_VERSION}" && \
     chown -R nexus:nexus "${NEXUS_REPO_OSS_DATA}" && \
     ln -s "/opt/nexus-${NEXUS_REPO_OSS_VERSION}" "${NEXUS_REPO_OSS_HOME}" && \
-    apk del --no-cache curl libcurl
+    apk del --no-cache curl libcurl nghttp2-libs
 
 EXPOSE 8081 5000
 

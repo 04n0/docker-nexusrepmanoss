@@ -2,12 +2,12 @@ FROM library/alpine:3.10
 
 LABEL maintainer="04n0"
 
-ENV NEXUS_REPO_OSS_VERSION="3.17.0-01" \
+ENV NEXUS_REPO_OSS_VERSION="3.18.0-01" \
     NEXUS_REPO_OSS_DATA="/opt/nexus-data" \
     NEXUS_REPO_OSS_HOME="/opt/nexus-latest" \
-    JVM_HEAP_MIN=1024M \
-    JVM_HEAP_MAX=1280M \
-    MAX_DIRECT_MEMORY=1792M \
+    JVM_HEAP_MIN=1200M \
+    JVM_HEAP_MAX=1200M \
+    MAX_DIRECT_MEMORY=2G \
     JKS_SECRET="supersecret"
 
 RUN \

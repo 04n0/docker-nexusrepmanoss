@@ -1,6 +1,6 @@
 ## Sonatype Nexus Repository OSS 3.20.0
 
-Alpine Linux 3.10 based image
+Alpine Linux 3.11 based image
 
 *   https://www.sonatype.com/nexus-repository-oss
 *   https://books.sonatype.com/nexus-book/reference3/

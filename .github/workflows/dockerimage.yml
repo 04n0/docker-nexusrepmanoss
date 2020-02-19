@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build Docker Image
 
 on: [push]
 
@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build ./alpine --file Dockerfile --tag nexusrepooss:$(date +%s)
+      run: docker build ./alpine --tag nexusrepomanoss:$(date +%s)

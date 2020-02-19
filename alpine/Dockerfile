@@ -11,7 +11,8 @@ ENV NEXUS_REPO_OSS_VERSION="3.21.1-01" \
     JKS_SECRET="supersecret"
 
 ARG NEXUS_REPO_OSS_FILE_HASH=aa5396eea6e619c32644a25a0225e55d43d8dc1e3567b7042a384a721d56332b
-ARG NEXUS_REPO_OSS_FILE_URL="https://download.sonatype.com/nexus/3/nexus-${NEXUS_REPO_OSS_VERSION}-unix.tar.gz"
+ARG NEXUS_REPO_OSS_FILE_NAME="nexus-${NEXUS_REPO_OSS_VERSION}-unix.tar.gz"
+ARG NEXUS_REPO_OSS_FILE_URL="https://download.sonatype.com/nexus/3/${NEXUS_REPO_OSS_FILE_NAME}"
 
 RUN \
     apk add --no-cache nspr nss openssl openjdk8-jre-base sqlite-libs
@@ -20,10 +21,12 @@ RUN \
     set -x && \
     apk add --no-cache curl && \
     mkdir -p /opt && \
-    curl -sL "${NEXUS_REPO_OSS_FILE_URL}" \
-    | tar -zxC "/opt" && \
+    curl -sSLO "${NEXUS_REPO_OSS_FILE_URL}" && \
+    echo "${NEXUS_REPO_OSS_FILE_HASH}  ${NEXUS_REPO_OSS_FILE_NAME}" | sha256sum -c - && \
+    tar -zxf "${NEXUS_REPO_OSS_FILE_NAME}" -C "/opt" && \
+    rm -f "${NEXUS_REPO_OSS_FILE_NAME}" && \
     addgroup -g 6000 -S nexus && \
-    adduser -S -u 6000 -h ${NEXUS_REPO_OSS_DATA} -G nexus nexus && \
+    adduser -S -u 6000 -h "${NEXUS_REPO_OSS_DATA}" -G nexus nexus && \
     sed \
         -e "s|-Xms1200M|-Xms${JVM_HEAP_MIN}|g" \
         -e "s|-Xmx1200M|-Xmx${JVM_HEAP_MAX}|g" \

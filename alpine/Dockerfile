@@ -2,13 +2,16 @@ FROM library/alpine:3.11
 
 LABEL maintainer="04n0"
 
-ENV NEXUS_REPO_OSS_VERSION="3.20.1-01" \
+ENV NEXUS_REPO_OSS_VERSION="3.21.1-01" \
     NEXUS_REPO_OSS_DATA="/opt/nexus-data" \
     NEXUS_REPO_OSS_HOME="/opt/nexus-latest" \
     JVM_HEAP_MIN=1200M \
     JVM_HEAP_MAX=1200M \
     MAX_DIRECT_MEMORY=2G \
     JKS_SECRET="supersecret"
+
+ARG NEXUS_REPO_OSS_FILE_HASH=aa5396eea6e619c32644a25a0225e55d43d8dc1e3567b7042a384a721d56332b
+ARG NEXUS_REPO_OSS_FILE_URL="https://download.sonatype.com/nexus/3/nexus-${NEXUS_REPO_OSS_VERSION}-unix.tar.gz"
 
 RUN \
     apk add --no-cache nspr nss openssl openjdk8-jre-base sqlite-libs
@@ -17,7 +20,7 @@ RUN \
     set -x && \
     apk add --no-cache curl && \
     mkdir -p /opt && \
-    curl -sL "https://download.sonatype.com/nexus/3/nexus-${NEXUS_REPO_OSS_VERSION}-unix.tar.gz" \
+    curl -sL "${NEXUS_REPO_OSS_FILE_URL}" \
     | tar -zxC "/opt" && \
     addgroup -g 6000 -S nexus && \
     adduser -S -u 6000 -h ${NEXUS_REPO_OSS_DATA} -G nexus nexus && \

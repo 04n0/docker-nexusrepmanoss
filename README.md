@@ -3,8 +3,8 @@
 Alpine Linux 3.11 based image
 
 *   https://www.sonatype.com/nexus-repository-oss
-*   https://books.sonatype.com/nexus-book/reference3/
-*   https://help.sonatype.com/display/NXRM3/2020+Release+Notes
+*   https://help.sonatype.com/repomanager3
+*   https://help.sonatype.com/repomanager3/release-notes
 
 ## Example usage
 

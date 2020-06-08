@@ -28,9 +28,6 @@ RUN \
     addgroup -g 6000 -S nexus && \
     adduser -S -u 6000 -h "${NEXUS_REPO_OSS_DATA}" -G nexus nexus && \
     sed \
-        -e "s|-Xms1200M|-Xms${JVM_HEAP_MIN}|g" \
-        -e "s|-Xmx1200M|-Xmx${JVM_HEAP_MAX}|g" \
-        -e "s|-XX:MaxDirectMemorySize=2G|-XX:MaxDirectMemorySize=${MAX_DIRECT_MEMORY}|g" \
         -e "s|-XX:LogFile=../sonatype-work/nexus3/log/jvm.log|-XX:LogFile=${NEXUS_REPO_OSS_DATA}/log/jvm.log|g" \
         -e "s|karaf.home=.|karaf.home=/opt/nexus-${NEXUS_REPO_OSS_VERSION}|g" \
         -e "s|karaf.base=.|karaf.base=/opt/nexus-${NEXUS_REPO_OSS_VERSION}|g" \

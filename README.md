@@ -1,6 +1,6 @@
 ## Sonatype Nexus Repository OSS 3.24.0
 
-Alpine Linux 3.11 based image
+Alpine Linux 3.12 based image
 
 *   https://www.sonatype.com/nexus-repository-oss
 *   https://help.sonatype.com/repomanager3

@@ -1,4 +1,4 @@
-FROM library/alpine:3.11
+FROM library/alpine:3.12
 
 LABEL maintainer="04n0"
 

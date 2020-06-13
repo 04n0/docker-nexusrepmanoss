@@ -27,7 +27,7 @@ container:
 ```bash
 docker run -d -v $(pwd)/data:/opt/nexus-data \
           -p 8081:8081 -p 5000:5000 \
-          -e JVM_HEAP_MIN=4G -e JVM_HEAP_MAX=4G -e MAX_DIRECT_MEMORY=4G \
+          -e JVM_HEAP_MIN=4G -e JVM_HEAP_MAX=4G -e MAX_DIRECT_MEMORY=6717M \
           --ulimit nofile=65536 \
           --name nexus-repository-oss \
           04n0/nexusrepmanoss:3.24-alpine

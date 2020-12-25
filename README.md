@@ -1,4 +1,4 @@
-## Sonatype Nexus Repository OSS 3.29.0
+## Sonatype Nexus Repository OSS 3.29.1
 
 Alpine Linux 3.12 based image
 

@@ -1,6 +1,6 @@
-## Sonatype Nexus Repository OSS 3.32.0
+## Sonatype Nexus Repository OSS 3.33.0
 
-Alpine Linux 3.13 based image
+Alpine Linux 3.14 based image
 
 *   https://www.sonatype.com/nexus-repository-oss
 *   https://help.sonatype.com/repomanager3
@@ -17,7 +17,7 @@ docker run -d -v $(pwd)/data:/opt/nexus-data \
           -p 8081:8081 -p 5000:5000 \
           --ulimit nofile=65536 \
           --name nexus-repository-oss \
-          04n0/nexusrepmanoss:3.32-alpine
+          04n0/nexusrepmanoss:3.33-alpine
 ```
 
 If you need to override the default configuration of JVM memory, you can do so
@@ -30,7 +30,7 @@ docker run -d -v $(pwd)/data:/opt/nexus-data \
           -e JVM_HEAP_MIN=4G -e JVM_HEAP_MAX=4G -e MAX_DIRECT_MEMORY=6717M \
           --ulimit nofile=65536 \
           --name nexus-repository-oss \
-          04n0/nexusrepmanoss:3.32-alpine
+          04n0/nexusrepmanoss:3.33-alpine
 ```
 
 The default configuration is:
